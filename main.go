@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+
+	_ "github.com/lib/pq"
 )
 
 var (
@@ -11,7 +13,7 @@ var (
 )
 
 func main() {
-
+	connectDB()
 }
 
 func connectDB() {
@@ -21,5 +23,5 @@ func connectDB() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Connect DB Success", conn)
+	fmt.Println("Connect DB Success\n", conn)
 }
